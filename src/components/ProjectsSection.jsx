@@ -1,0 +1,240 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+
+export default function ProjectsSection() {
+  const projects = [
+    {
+      index: "01",
+      title: "E-commerce App",
+      year: "2024",
+      stack: "MERN • Cart & Checkout • Payments-ready UI",
+      image: "/etimad.webp",
+      liveUrl: "https://etimadmart.com"
+    },
+    {
+      index: "02",
+      title: "Inventory Management",
+      year: "2023",
+      stack: "MERN • Role-based access • Stock tracking",
+      image: "/ims.webp",
+      liveUrl: "https://etimad-inventory.netlify.app/",
+      codeLink: ""
+    },
+    {
+      index: "03",
+      title: "Learning Management",
+      year: "2023",
+      stack: "MERN • Courses • Progress tracking",
+      image: "/e-learn.webp",
+      codeLink: "https://github.com/farhan-Ali007/E-learn"
+    },
+    {
+      index: "04",
+      title: "AI Image Generator",
+      year: "2025",
+      stack: "React • OpenAI API • Image generation • Responsive UI • State management • Error handling • Loading states • Image download • Clipboard API • Image optimization",
+      image: "/image-gen.webp",
+      codeLink: "https://github.com/farhan-Ali007/image-generator"
+    },
+    {
+      index: "05",
+      title: "Chat App",
+      year: "2022",
+      stack: "Socket.io • Real-time messaging • User presence • Message history • User authentication",
+      image: "/chat.webp",
+      codeLink: "https://github.com/farhan-Ali007/chat-frontend"
+    },
+    {
+      index: "06",
+      title: "Team Management App",
+      year: "2022",
+      stack: "MERN • Boards • Collaboration",
+      image: "/streno.webp",
+      codeLink: "https://github.com/farhan-Ali007/team-flow"
+    },
+    {
+      index: "07",
+      title: "Job Portal",
+      year: "2022",
+      stack: "MERN • Role-based access • Job search",
+      image: "/job.webp",
+      codeLink: "https://github.com/farhan-Ali007/job-board-frontend"
+    },
+  ];
+
+  const [activeProjectIndex, setActiveProjectIndex] = useState(0);
+
+  return (
+    <section
+      id="projects"
+      className="relative border-t border-slate-800 bg-slate-950/80 px-6 py-16 scroll-mt-24 md:scroll-mt-16 overflow-x-hidden"
+    >
+      <div className="mx-auto flex w-full max-w-5xl flex-col gap-8">
+        {/* Shared heading */}
+        <header className="flex flex-col gap-2 text-left">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-accent/80">
+            Selected Projects
+          </p>
+          <h2 className="text-2xl sm:text-3xl font-semibold text-slate-50">
+            Things I&apos;ve built recently
+          </h2>
+          <p className="max-w-2xl text-sm sm:text-base text-slate-400">
+            A mix of full-stack applications focused on clean architecture, real-world workflows,
+            and smooth user experience.
+          </p>
+        </header>
+
+        {/* Mobile layout: accordion-style cards */}
+        <div className="flex flex-col gap-3 md:hidden">
+          {projects.map((project, idx) => {
+            const isActive = idx === activeProjectIndex;
+            return (
+              <div
+                key={project.index}
+                className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/80 transition-colors"
+              >
+                <button
+                  type="button"
+                  onClick={() => setActiveProjectIndex(idx)}
+                  className="flex w-full items-center justify-between gap-3 px-4 py-3"
+                >
+                  <div className="flex items-center gap-3 text-left">
+                    <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-accent/80">
+                      {project.index}
+                    </span>
+                    <div>
+                      <p className="text-xs text-slate-400">{project.year}</p>
+                      <p className="text-sm font-semibold text-slate-50">{project.title}</p>
+                    </div>
+                  </div>
+                  <span className="text-accent text-sm">{isActive ? "-" : "+"}</span>
+                </button>
+
+                {isActive && (
+                  <div className="space-y-3 border-t border-slate-800/80 px-4 py-4 text-sm text-slate-300">
+                    {project.image && (
+                      <div className="mb-2 w-full overflow-hidden rounded-xl border border-slate-800/80 bg-slate-900/80">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          width={1500}
+                          height={700}
+                          className="w-full h-auto object-contain"
+                        />
+                      </div>
+                    )}
+                    <p>{project.stack}</p>
+                    <div className="mt-2 flex flex-wrap gap-3 text-xs text-slate-400">
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded-full border border-slate-600 px-4 py-1.5 font-medium text-slate-100 hover:border-accent hover:text-accent transition-colors"
+                        >
+                          View Live
+                        </a>
+                      )}
+                      {project.codeLink && (
+                        <a
+                          href={project.codeLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded-full border border-slate-600 px-4 py-1.5 font-medium text-slate-100 hover:border-accent hover:text-accent transition-colors"
+                        >
+                          View Code
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Desktop / tablet layout: list + details */}
+        <div className="hidden gap-8 md:grid md:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)] md:items-stretch">
+          {/* Left: project list */}
+          <div className="flex h-full flex-col divide-y divide-slate-800/80 rounded-2xl border border-slate-800/80 bg-slate-950/80">
+            {projects.map((project, idx) => {
+              const isActive = idx === activeProjectIndex;
+              return (
+                <button
+                  key={project.index}
+                  type="button"
+                  onClick={() => setActiveProjectIndex(idx)}
+                  className={`flex w-full items-center justify-between gap-3 px-4 py-3 text-left transition-colors ${isActive
+                    ? "bg-slate-900/80 text-slate-50"
+                    : "bg-transparent text-slate-300 hover:bg-slate-900/40"
+                    }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-accent/80">
+                      {project.index}
+                    </span>
+                    <div>
+                      <p className="text-[11px] text-slate-500">{project.year}</p>
+                      <p className="text-sm font-semibold">{project.title}</p>
+                    </div>
+                  </div>
+                  <span className="text-xs text-slate-400">{isActive ? "Active" : "View"}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Right: active project details */}
+          <div className="flex h-full flex-col gap-4 rounded-2xl border border-slate-800/80 bg-slate-950/80 p-5 shadow-[0_18px_45px_rgba(15,23,42,0.95)]">
+            {projects[activeProjectIndex].image && (
+              <div className="w-full overflow-hidden rounded-xl border border-slate-800/80 bg-slate-900/80">
+                <Image
+                  src={projects[activeProjectIndex].image}
+                  alt={projects[activeProjectIndex].title}
+                  width={1500}
+                  height={700}
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+            )}
+            <div>
+              <p className="text-[11px] font-mono uppercase tracking-[0.25em] text-accent/80">
+                {projects[activeProjectIndex].index} • {projects[activeProjectIndex].year}
+              </p>
+              <h3 className="mt-2 text-xl sm:text-2xl font-semibold text-slate-50">
+                {projects[activeProjectIndex].title}
+              </h3>
+              <p className="mt-2 text-sm text-slate-300">
+                {projects[activeProjectIndex].stack}
+              </p>
+            </div>
+            <div className="mt-2 flex flex-wrap gap-3 text-xs text-slate-400">
+              {projects[activeProjectIndex].liveUrl && (
+                <a
+                  href={projects[activeProjectIndex].liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-slate-600 px-4 py-1.5 font-medium text-slate-100 hover:border-accent hover:text-accent transition-colors"
+                >
+                  View Live
+                </a>
+              )}
+              {projects[activeProjectIndex].codeLink && (
+                <a
+                  href={projects[activeProjectIndex].codeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-slate-600 px-4 py-1.5 font-medium text-slate-100 hover:border-accent hover:text-accent transition-colors"
+                >
+                  View Code
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
