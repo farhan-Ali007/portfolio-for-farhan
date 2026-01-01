@@ -31,7 +31,7 @@ export default function ExperienceSection() {
               <div className="group flex-1 rounded-2xl border border-slate-800/80 bg-slate-950/85 px-4 py-3 transition-transform transition-shadow hover:-translate-y-1 hover:border-accent/80 hover:shadow-[0_18px_45px_rgba(15,23,42,0.95)]">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-accent/80">
-                    2023 — Present
+                    2026 — Present
                   </span>
                   <span className="text-[11px] text-slate-400">MERN Stack Developer</span>
                 </div>
@@ -60,7 +60,7 @@ export default function ExperienceSection() {
               <div className="group flex-1 rounded-2xl border border-slate-800/80 bg-slate-950/75 px-4 py-3 transition-transform transition-shadow hover:-translate-y-1 hover:border-accent/80 hover:shadow-[0_18px_45px_rgba(15,23,42,0.95)]">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-accent/60">
-                    2022 — 2023
+                    2024 — 2025
                   </span>
                   <span className="text-[11px] text-slate-400">Backend & API Development</span>
                 </div>
@@ -89,7 +89,7 @@ export default function ExperienceSection() {
               <div className="group flex-1 rounded-2xl border border-slate-800/80 bg-slate-950/60 px-4 py-3 transition-transform transition-shadow hover:-translate-y-1 hover:border-accent/70 hover:shadow-[0_18px_45px_rgba(15,23,42,0.9)]">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-slate-500">
-                    2021 — 2022
+                    2023 — 2024
                   </span>
                   <span className="text-[11px] text-slate-400">Learning & Foundations</span>
                 </div>
