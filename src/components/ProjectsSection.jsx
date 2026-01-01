@@ -122,6 +122,7 @@ export default function ProjectsSection() {
                           width={1500}
                           height={700}
                           className="w-full h-auto object-contain"
+                          loading="lazy"
                         />
                       </div>
                     )}
@@ -196,6 +197,7 @@ export default function ProjectsSection() {
                   width={1500}
                   height={700}
                   className="w-full h-auto object-contain"
+                  loading="lazy"
                 />
               </div>
             )}
