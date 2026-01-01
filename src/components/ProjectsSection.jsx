@@ -16,7 +16,7 @@ export default function ProjectsSection() {
     {
       index: "02",
       title: "Inventory Management",
-      year: "2023",
+      year: "2025",
       stack: "MERN • Role-based access • Stock tracking",
       image: "/ims.webp",
       liveUrl: "https://etimad-inventory.netlify.app/",
@@ -25,7 +25,7 @@ export default function ProjectsSection() {
     {
       index: "03",
       title: "Learning Management",
-      year: "2023",
+      year: "2024",
       stack: "MERN • Courses • Progress tracking",
       image: "/e-learn.webp",
       codeLink: "https://github.com/farhan-Ali007/E-learn"
@@ -41,7 +41,7 @@ export default function ProjectsSection() {
     {
       index: "05",
       title: "Chat App",
-      year: "2022",
+      year: "2024",
       stack: "Socket.io • Real-time messaging • User presence • Message history • User authentication",
       image: "/chat.webp",
       codeLink: "https://github.com/farhan-Ali007/chat-frontend"
@@ -49,7 +49,7 @@ export default function ProjectsSection() {
     {
       index: "06",
       title: "Team Management App",
-      year: "2022",
+      year: "2025",
       stack: "MERN • Boards • Collaboration",
       image: "/streno.webp",
       codeLink: "https://github.com/farhan-Ali007/team-flow"
@@ -57,7 +57,7 @@ export default function ProjectsSection() {
     {
       index: "07",
       title: "Job Portal",
-      year: "2022",
+      year: "2023",
       stack: "MERN • Role-based access • Job search",
       image: "/job.webp",
       codeLink: "https://github.com/farhan-Ali007/job-board-frontend"
