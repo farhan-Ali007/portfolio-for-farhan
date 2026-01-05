@@ -5,7 +5,7 @@ import { GridScan } from "@/components/GridScan";
 
 export default function HeroSection() {
   return (
-    <section className="relative px-6 py-16 overflow-hidden h-[calc(100vh-4rem)] scroll-mt-24 md:scroll-mt-32" id="home">
+    <section className="relative px-6 py-16 overflow-hidden h-[80vh] md:h-[calc(100vh-4rem)] scroll-mt-24 md:scroll-mt-32" id="home">
       <div className="absolute inset-0 z-0">
         <GridScan
           className="pointer-events-none h-full w-full"
