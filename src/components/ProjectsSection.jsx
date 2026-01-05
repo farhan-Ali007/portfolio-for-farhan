@@ -86,6 +86,22 @@ export default function ProjectsSection() {
           </p>
         </header>
 
+        {/* Hidden preloader to cache all project images for instant switching */}
+        <div className="hidden" aria-hidden="true">
+          {projects.map((project) =>
+            project.image ? (
+              <Image
+                key={project.index}
+                src={project.image}
+                alt={project.title}
+                width={150}
+                height={70}
+                loading="eager"
+              />
+            ) : null
+          )}
+        </div>
+
         {/* Mobile layout: accordion-style cards */}
         <div className="flex flex-col gap-3 md:hidden">
           {projects.map((project, idx) => {
@@ -98,7 +114,7 @@ export default function ProjectsSection() {
                 <button
                   type="button"
                   onClick={() => setActiveProjectIndex(idx)}
-                  className="flex w-full items-center justify-between gap-3 px-4 py-3"
+                  className="cursor-target flex w-full items-center justify-between gap-3 px-4 py-3"
                 >
                   <div className="flex items-center gap-3 text-left">
                     <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-accent/80">
@@ -167,7 +183,7 @@ export default function ProjectsSection() {
                   key={project.index}
                   type="button"
                   onClick={() => setActiveProjectIndex(idx)}
-                  className={`flex w-full items-center justify-between gap-3 px-4 py-3 text-left transition-colors ${isActive
+                  className={`cursor-target flex w-full items-center justify-between gap-3 px-4 py-3 text-left transition-colors ${isActive
                     ? "bg-slate-900/80 text-slate-50"
                     : "bg-transparent text-slate-300 hover:bg-slate-900/40"
                     }`}

@@ -49,13 +49,13 @@ export default function HeroSection() {
         <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
           <a
             href="#projects"
-            className="rounded-full bg-accent px-6 py-2 text-sm font-medium text-slate-950 hover:bg-accent/90 transition-colors"
+            className="rounded-full cursor-target bg-accent px-6 py-2 text-sm font-medium text-slate-950 hover:bg-accent/90 transition-colors"
           >
             View Projects
           </a>
           <a
             href="#contact"
-            className="rounded-full border border-slate-700 px-6 py-2 text-sm font-medium text-slate-200 hover:border-accent hover:text-accent transition-colors"
+            className="rounded-full cursor-target border border-slate-700 px-6 py-2 text-sm font-medium text-slate-200 hover:border-accent hover:text-accent transition-colors"
           >
             Contact Me
           </a>

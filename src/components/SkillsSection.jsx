@@ -52,7 +52,7 @@ export default function SkillsSection() {
                 {["HTML", "CSS", "JavaScript (ES6+)", "React", "Next.js", "Tailwind CSS", "Framer Motion"].map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-slate-800/80 bg-slate-950/80 px-3 py-1 text-[11px] font-medium text-slate-100 shadow-[0_0_0_1px_rgba(15,23,42,0.9)] transition-colors hover:border-accent/80 hover:text-accent hover:bg-accent/10"
+                    className="cursor-target rounded-full border border-slate-800/80 bg-slate-950/80 px-3 py-1 text-[11px] font-medium text-slate-100 shadow-[0_0_0_1px_rgba(15,23,42,0.9)] transition-colors hover:border-accent/80 hover:text-accent hover:bg-accent/10"
                   >
                     {item}
                   </span>
@@ -68,7 +68,7 @@ export default function SkillsSection() {
                 {["Node.js", "Express.js", "REST APIs", "MongoDB", "Mongoose", "JWT Auth"].map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-slate-800/80 bg-slate-950/80 px-3 py-1 text-xs font-medium text-slate-100 shadow-[0_0_0_1px_rgba(15,23,42,0.9)] transition-colors hover:border-accent/80 hover:text-accent"
+                    className="cursor-target rounded-full border border-slate-800/80 bg-slate-950/80 px-3 py-1 text-xs font-medium text-slate-100 shadow-[0_0_0_1px_rgba(15,23,42,0.9)] transition-colors hover:border-accent/80 hover:text-accent"
                   >
                     {item}
                   </span>
@@ -86,7 +86,7 @@ export default function SkillsSection() {
                 {["Git & GitHub", "VS Code", "Postman", "Figma (basic)", "Vercel / Netlify"].map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-slate-800/80 bg-slate-950/80 px-3 py-1 text-[11px] font-medium text-slate-100 shadow-[0_0_0_1px_rgba(15,23,42,0.9)] transition-colors hover:border-accent/80 hover:text-accent hover:bg-accent/10"
+                    className="cursor-target rounded-full border border-slate-800/80 bg-slate-950/80 px-3 py-1 text-[11px] font-medium text-slate-100 shadow-[0_0_0_1px_rgba(15,23,42,0.9)] transition-colors hover:border-accent/80 hover:text-accent hover:bg-accent/10"
                   >
                     {item}
                   </span>
@@ -102,7 +102,7 @@ export default function SkillsSection() {
                 {["Problem solving", "Clean code", "Communication", "Collaboration"].map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-slate-800/80 bg-slate-950/80 px-3 py-1 text-[11px] font-medium text-slate-100 shadow-[0_0_0_1px_rgba(15,23,42,0.9)] transition-colors hover:border-accent/80 hover:text-accent hover:bg-accent/10"
+                    className="cursor-target rounded-full border border-slate-800/80 bg-slate-950/80 px-3 py-1 text-[11px] font-medium text-slate-100 shadow-[0_0_0_1px_rgba(15,23,42,0.9)] transition-colors hover:border-accent/80 hover:text-accent hover:bg-accent/10"
                   >
                     {item}
                   </span>

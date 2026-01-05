@@ -28,7 +28,7 @@ export default function ExperienceSection() {
               <div className="mt-2 flex h-5 w-5 items-center justify-center">
                 <div className="h-2.5 w-2.5 rounded-full border border-accent bg-slate-950 shadow-[0_0_18px_rgba(148,249,255,0.8)]" />
               </div>
-              <div className="group flex-1 rounded-2xl border border-slate-800/80 bg-slate-950/85 px-4 py-3 transition-transform transition-shadow hover:-translate-y-1 hover:border-accent/80 hover:shadow-[0_18px_45px_rgba(15,23,42,0.95)]">
+              <div className="group cursor-target flex-1 rounded-2xl border border-slate-800/80 bg-slate-950/85 px-4 py-3 transition-transform transition-shadow hover:-translate-y-1 hover:border-accent/80 hover:shadow-[0_18px_45px_rgba(15,23,42,0.95)]">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-accent/80">
                     2026 — Present
@@ -57,7 +57,7 @@ export default function ExperienceSection() {
               <div className="mt-2 flex h-5 w-5 items-center justify-center">
                 <div className="h-2.5 w-2.5 rounded-full border border-accent/80 bg-slate-950" />
               </div>
-              <div className="group flex-1 rounded-2xl border border-slate-800/80 bg-slate-950/75 px-4 py-3 transition-transform transition-shadow hover:-translate-y-1 hover:border-accent/80 hover:shadow-[0_18px_45px_rgba(15,23,42,0.95)]">
+              <div className="group cursor-target flex-1 rounded-2xl border border-slate-800/80 bg-slate-950/75 px-4 py-3 transition-transform transition-shadow hover:-translate-y-1 hover:border-accent/80 hover:shadow-[0_18px_45px_rgba(15,23,42,0.95)]">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-accent/60">
                     2024 — 2025
@@ -86,7 +86,7 @@ export default function ExperienceSection() {
               <div className="mt-2 flex h-5 w-5 items-center justify-center">
                 <div className="h-2.5 w-2.5 rounded-full border border-slate-600 bg-slate-950" />
               </div>
-              <div className="group flex-1 rounded-2xl border border-slate-800/80 bg-slate-950/60 px-4 py-3 transition-transform transition-shadow hover:-translate-y-1 hover:border-accent/70 hover:shadow-[0_18px_45px_rgba(15,23,42,0.9)]">
+              <div className="group cursor-target flex-1 rounded-2xl border border-slate-800/80 bg-slate-950/60 px-4 py-3 transition-transform transition-shadow hover:-translate-y-1 hover:border-accent/70 hover:shadow-[0_18px_45px_rgba(15,23,42,0.9)]">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-slate-500">
                     2023 — 2024

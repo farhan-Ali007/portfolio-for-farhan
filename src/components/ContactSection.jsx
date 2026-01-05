@@ -87,28 +87,28 @@ export default function ContactSection() {
             <a
               href="https://www.facebook.com/share/1ALGBirA3u/" // TODO: replace with your Facebook URL
               aria-label="Facebook"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700/80 bg-slate-900/80 text-slate-300 hover:border-accent/80 hover:text-accent transition-colors"
+              className="cursor-target flex h-9 w-9 items-center justify-center rounded-full border border-slate-700/80 bg-slate-900/80 text-slate-300 hover:border-accent/80 hover:text-accent transition-colors"
             >
               <Facebook className="h-4 w-4" />
             </a>
             <a
               href="https://www.instagram.com/f4rh4n2516?igsh=MjF3ZGNoemRuZzV0" // TODO: replace with your Instagram URL
               aria-label="Instagram"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700/80 bg-slate-900/80 text-slate-300 hover:border-accent/80 hover:text-accent transition-colors"
+              className="cursor-target flex h-9 w-9 items-center justify-center rounded-full border border-slate-700/80 bg-slate-900/80 text-slate-300 hover:border-accent/80 hover:text-accent transition-colors"
             >
               <Instagram className="h-4 w-4" />
             </a>
             <a
               href="https://www.linkedin.com/in/farhan-ali-61971936a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" // TODO: replace with your LinkedIn URL
               aria-label="LinkedIn"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700/80 bg-slate-900/80 text-slate-300 hover:border-accent/80 hover:text-accent transition-colors"
+              className="cursor-target flex h-9 w-9 items-center justify-center rounded-full border border-slate-700/80 bg-slate-900/80 text-slate-300 hover:border-accent/80 hover:text-accent transition-colors"
             >
               <Linkedin className="h-4 w-4" />
             </a>
             <a
               href="https://github.com/farhan-Ali007" // TODO: replace with your GitHub URL
               aria-label="GitHub"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-700/80 bg-slate-900/80 text-slate-300 hover:border-accent/80 hover:text-accent transition-colors"
+              className="cursor-target flex h-9 w-9 items-center justify-center rounded-full border border-slate-700/80 bg-slate-900/80 text-slate-300 hover:border-accent/80 hover:text-accent transition-colors"
             >
               <Github className="h-4 w-4" />
             </a>
@@ -186,7 +186,7 @@ export default function ContactSection() {
                 </p>
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-950 shadow-[0_0_35px_rgba(148,249,255,0.5)] transition-colors hover:bg-accent/90 disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="cursor-target inline-flex items-center justify-center rounded-full bg-accent px-6 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-950 shadow-[0_0_35px_rgba(148,249,255,0.5)] transition-colors hover:bg-accent/90 disabled:opacity-70 disabled:cursor-not-allowed"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
