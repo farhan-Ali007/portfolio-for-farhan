@@ -2,6 +2,13 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import etimadImg from "../../public/etimad.webp";
+import imsImg from "../../public/ims.webp";
+import elearnImg from "../../public/e-learn.webp";
+import imageGenImg from "../../public/image-gen.webp";
+import chatImg from "../../public/chat.webp";
+import strenoImg from "../../public/streno.webp";
+import jobImg from "../../public/job.webp";
 
 export default function ProjectsSection() {
   const projects = [
@@ -10,7 +17,7 @@ export default function ProjectsSection() {
       title: "E-commerce App",
       year: "2024",
       stack: "MERN • Cart & Checkout • Payments-ready UI",
-      image: "/etimad.webp",
+      image: etimadImg,
       liveUrl: "https://etimadmart.com"
     },
     {
@@ -18,24 +25,24 @@ export default function ProjectsSection() {
       title: "Inventory Management",
       year: "2025",
       stack: "MERN • Role-based access • Stock tracking",
-      image: "/ims.webp",
+      image: imsImg,
       liveUrl: "https://etimad-inventory.netlify.app/",
       codeLink: ""
     },
     {
       index: "03",
-      title: "Learning Management",
-      year: "2024",
-      stack: "MERN • Courses • Progress tracking",
-      image: "/e-learn.webp",
-      codeLink: "https://github.com/farhan-Ali007/E-learn"
+      title: "Team Management App",
+      year: "2025",
+      stack: "MERN • Boards • Collaboration",
+      image: strenoImg,
+      codeLink: "https://github.com/farhan-Ali007/team-flow"
     },
     {
       index: "04",
       title: "AI Image Generator",
       year: "2025",
       stack: "React • OpenAI API • Image generation • Responsive UI • State management • Error handling • Loading states • Image download • Clipboard API • Image optimization",
-      image: "/image-gen.webp",
+      image: imageGenImg,
       codeLink: "https://github.com/farhan-Ali007/image-generator"
     },
     {
@@ -43,28 +50,29 @@ export default function ProjectsSection() {
       title: "Chat App",
       year: "2024",
       stack: "Socket.io • Real-time messaging • User presence • Message history • User authentication",
-      image: "/chat.webp",
+      image: chatImg,
       codeLink: "https://github.com/farhan-Ali007/chat-frontend"
     },
     {
       index: "06",
-      title: "Team Management App",
-      year: "2025",
-      stack: "MERN • Boards • Collaboration",
-      image: "/streno.webp",
-      codeLink: "https://github.com/farhan-Ali007/team-flow"
+      title: "Learning Management",
+      year: "2024",
+      stack: "MERN • Courses • Progress tracking",
+      image: elearnImg,
+      codeLink: "https://github.com/farhan-Ali007/E-learn"
     },
     {
       index: "07",
       title: "Job Portal",
       year: "2023",
       stack: "MERN • Role-based access • Job search",
-      image: "/job.webp",
+      image: jobImg,
       codeLink: "https://github.com/farhan-Ali007/job-board-frontend"
     },
   ];
 
   const [activeProjectIndex, setActiveProjectIndex] = useState(0);
+  const [loadedImages, setLoadedImages] = useState({}); // track which project images have finished loading
 
   return (
     <section
@@ -85,22 +93,6 @@ export default function ProjectsSection() {
             and smooth user experience.
           </p>
         </header>
-
-        {/* Hidden preloader to cache all project images for instant switching */}
-        <div className="hidden" aria-hidden="true">
-          {projects.map((project) =>
-            project.image ? (
-              <Image
-                key={project.index}
-                src={project.image}
-                alt={project.title}
-                width={150}
-                height={70}
-                loading="eager"
-              />
-            ) : null
-          )}
-        </div>
 
         {/* Mobile layout: accordion-style cards */}
         <div className="flex flex-col gap-3 md:hidden">
@@ -131,18 +123,26 @@ export default function ProjectsSection() {
                 {isActive && (
                   <div className="space-y-3 border-t border-slate-800/80 px-4 py-4 text-sm text-slate-300">
                     {project.image && (
-                      <div className="mb-2 w-full overflow-hidden rounded-xl border border-slate-800/80 bg-slate-900/80">
+                      <div className="relative mb-2 w-full overflow-hidden rounded-xl border border-slate-800/80 bg-slate-900/80">
+                        {!loadedImages[project.index] && (
+                          <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-slate-800/80 via-slate-700/60 to-slate-800/80 bg-[length:200%_100%]" />
+                        )}
                         <Image
                           src={project.image}
                           alt={project.title}
                           width={1500}
                           height={700}
-                          className="w-full h-auto object-contain"
+                          className="relative z-10 w-full h-auto object-contain"
                           loading="lazy"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          placeholder="blur"
+                          onLoadingComplete={() =>
+                            setLoadedImages((prev) => ({ ...prev, [project.index]: true }))
+                          }
                         />
                       </div>
                     )}
-                    <p>{project.stack}</p>
+                    <p>{project.stack}</p>z
                     <div className="mt-2 flex flex-wrap gap-3 text-xs text-slate-400">
                       {project.liveUrl && (
                         <a
@@ -206,14 +206,25 @@ export default function ProjectsSection() {
           {/* Right: active project details */}
           <div className="flex h-full flex-col gap-4 rounded-2xl border border-slate-800/80 bg-slate-950/80 p-5 shadow-[0_18px_45px_rgba(15,23,42,0.95)]">
             {projects[activeProjectIndex].image && (
-              <div className="w-full overflow-hidden rounded-xl border border-slate-800/80 bg-slate-900/80">
+              <div className="relative w-full overflow-hidden rounded-xl border border-slate-800/80 bg-slate-900/80">
+                {!loadedImages[projects[activeProjectIndex].index] && (
+                  <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-slate-800/80 via-slate-700/60 to-slate-800/80 bg-[length:200%_100%]" />
+                )}
                 <Image
                   src={projects[activeProjectIndex].image}
                   alt={projects[activeProjectIndex].title}
                   width={1500}
                   height={700}
-                  className="w-full h-auto object-contain"
+                  className="relative z-10 w-full h-auto object-contain"
                   loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 60vw"
+                  placeholder="blur"
+                  onLoadingComplete={() =>
+                    setLoadedImages((prev) => ({
+                      ...prev,
+                      [projects[activeProjectIndex].index]: true,
+                    }))
+                  }
                 />
               </div>
             )}
